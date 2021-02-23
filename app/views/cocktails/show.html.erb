@@ -1,0 +1,8 @@
+<h3><%= @cocktail.name %></h3>
+<p><%= @cocktail.doses.description %></p>
+<p><%= @cocktail.doses.ingredient %></p>
+<%= link_to raw('<i class="far fa-trash-alt fa-lg"></i>'), 
+      cocktail_path(@cocktail),
+      method: :delete,
+      data: { confirm: "Delete #{@cocktail.name}?" } %>
+
