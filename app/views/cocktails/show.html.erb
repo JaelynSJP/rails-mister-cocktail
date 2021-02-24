@@ -1,6 +1,16 @@
 <h3><%= @cocktail.name %></h3>
-<p><%= @cocktail.doses.description %></p>
-<p><%= @cocktail.doses.ingredient %></p>
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.description %> - <%= dose.ingredient.name%>
+    <%= link_to raw('<i class="far fa-trash-alt fa-lg"></i>'), 
+      dose_path(dose),
+      method: :delete,
+      data: { confirm: "Delete #{dose.ingredient.name}?" } %></li> 
+  <% end %>
+</ul>
+
+<%= link_to 'Create Dose',  new_cocktail_dose_path(@cocktail) %>
+
 <%= link_to raw('<i class="far fa-trash-alt fa-lg"></i>'), 
       cocktail_path(@cocktail),
       method: :delete,
