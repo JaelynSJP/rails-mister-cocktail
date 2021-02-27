@@ -14,8 +14,8 @@
 
   <body>
     <div class="navbar">
-      <p><%= link_to raw('<i class="fas fa-cocktail"></i>'), cocktails_path %></p>
-      <p><%= button_to "Add New Cocktail", new_cocktail_path, method: :get %></p>
+      <div><%= link_to raw('<i class="fas fa-cocktail"></i>'), root_path %></div>
+      <div><%= button_to "Add New Cocktail", new_cocktail_path, method: :get %></div>
     </div>
 
     <%= yield %>

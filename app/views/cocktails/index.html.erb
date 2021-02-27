@@ -1,7 +1,13 @@
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><h3><%=link_to cocktail.name, cocktail_path(cocktail) %></h3></li>
-  <% end %>
 
-</ul>
-<%= link_to 'New Cocktail', new_cocktail_path %>
+<div class="cocktail_card">
+  <% @cocktails.each do |cocktail| %>
+  
+    <%= link_to cocktail_path(cocktail) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.imageURL %>')" >
+      <div><%= cocktail.name %></div>
+      </div>
+    <% end %>
+  <% end %>
+  
+
+</div>

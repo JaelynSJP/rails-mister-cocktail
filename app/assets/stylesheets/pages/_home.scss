@@ -4,5 +4,21 @@ body{
 }
 
 .navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 3px solid #c2d5de;
+    font-size: 20px;
+    p{
+        margin: 0;
+    }
+
 }
+
+.create_button{
+    align-self: flex-end;
+}
+
+
+
