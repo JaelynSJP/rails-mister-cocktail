@@ -1,5 +1,7 @@
 <div class="container">
   <h3><%= @cocktail.name %></h3>
+
+  <%= cl_image_tag @cocktail.photo.key, height: 200, width: 300, crop: :fill %>
   <ul>
     <% @cocktail.doses.each do |dose| %>
       <li><%= dose.description %> - <%= dose.ingredient.name%>
@@ -9,6 +11,11 @@
         data: { confirm: "Delete #{dose.ingredient.name}?" } %></li> 
     <% end %>
   </ul>
+
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :photo %>
+  <%= f.submit %>
+<% end %>
 
   <%= link_to 'Create Dose',  new_cocktail_dose_path(@cocktail) %>
 
