@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'json'
 require 'open-uri'
 
 puts 'Cleaning  Cocktail database...'
@@ -28,6 +27,7 @@ cocktails['drinks'].each do |cocktail|
   #   puts "#{ingredient_check} not exist"
   #   Ingredient.create!(name: ingredient_check)
   # end
+
   ingredient = if Ingredient.exists?(name: ingredient_check)
                  Ingredient.find_by(name: ingredient_check)
                else
